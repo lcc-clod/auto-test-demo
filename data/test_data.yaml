@@ -1,0 +1,26 @@
+# 注册接口 - 正向用例
+register_success:
+  email: "eve.holt@reqres.in"
+  password: "pistol"
+  expected_status: 200
+
+# 登录接口 - 正向用例
+login_success:
+  email: "eve.holt@reqres.in"
+  password: "pistol"
+  expected_status: 200
+
+# 登录接口 - 失败场景
+login_failed:
+  - email: "eve.holt@reqres.in"
+    password: "wrongpass"
+    expected_status: 400
+  - email: "notexist@reqres.in"
+    password: "pistol"
+    expected_status: 400
+  - email: ""
+    password: "pistol"
+    expected_status: 400
+  - email: "eve.holt@reqres.in"
+    password: ""
+    expected_status: 400
